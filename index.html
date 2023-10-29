@@ -1,62 +1,18 @@
-<!-- index.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Video Player</title>
-    <!-- Include stylesheet -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>My Video Player</h1>
+    <div class="video-player">
+        <input type="text" id="urlInput" placeholder="Enter URL here...">
+        <button id="playButton">Play Video</button>
+        <video width="420" height="280" controls></video>
+    </div>
     
-    <!-- Create a container for the video player -->
-    <div id="player"></div>
-    
-    <!-- Add a button to trigger the video upload process -->
-    <button onclick="uploadVideo()">Upload Video</button>
-    
-    <!-- Include the necessary scripts -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="script.js"></script>
 </body>
-</html>
-<!doctype html>
-<html>
-  <head>
-    <title>Video Player</title>
-    <style>
-      body {
-        text-align: center;
-      }
-      
-      #player {
-        width: 640px;
-        height: 480px;
-        margin: auto;
-      }
-    </style>
-  </head>
-  <body>
-    <h1>Video Player</h1>
-    <p><input type="text" id="urlInput" value="" /></p>
-    <p><button id="playButton">Play</button></p>
-    <div id="player"></div>
-    <script>
-      const urlInput = document.getElementById("urlInput");
-      const playButton = document.getElementById("playButton");
-      const playerDiv = document.getElementById("player");
-      
-      playButton.addEventListener("click", () => {
-        if (!urlInput.value) return;
-        
-        let videoUrl = urlInput.value;
-        let videoPlayer = document.createElement("video");
-        videoPlayer.src = videoUrl;
-        videoPlayer.controls = true;
-        videoPlayer.autoplay = true;
-        playerDiv.appendChild(videoPlayer);
-      });
-    </script>
-  </body>
 </html>
