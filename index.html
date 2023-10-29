@@ -21,3 +21,42 @@
     <script src="script.js"></script>
 </body>
 </html>
+<!doctype html>
+<html>
+  <head>
+    <title>Video Player</title>
+    <style>
+      body {
+        text-align: center;
+      }
+      
+      #player {
+        width: 640px;
+        height: 480px;
+        margin: auto;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Video Player</h1>
+    <p><input type="text" id="urlInput" value="" /></p>
+    <p><button id="playButton">Play</button></p>
+    <div id="player"></div>
+    <script>
+      const urlInput = document.getElementById("urlInput");
+      const playButton = document.getElementById("playButton");
+      const playerDiv = document.getElementById("player");
+      
+      playButton.addEventListener("click", () => {
+        if (!urlInput.value) return;
+        
+        let videoUrl = urlInput.value;
+        let videoPlayer = document.createElement("video");
+        videoPlayer.src = videoUrl;
+        videoPlayer.controls = true;
+        videoPlayer.autoplay = true;
+        playerDiv.appendChild(videoPlayer);
+      });
+    </script>
+  </body>
+</html>
